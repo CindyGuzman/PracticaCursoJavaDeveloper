@@ -11,4 +11,5 @@
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>co.com.bancolombia.practicapoo.Main</exec.mainClass>
     </properties>
+    <name>Actividad 1 - PracticaPOO</name>
 </project>
