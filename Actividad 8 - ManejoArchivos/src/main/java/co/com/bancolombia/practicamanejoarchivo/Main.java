@@ -49,7 +49,7 @@ public class Main {
 
         mostrarInformacionCliente(cliente1, 1);
         mostrarInformacionCliente(cliente2, 2);
-        mostrarInformacionCliente(cliente3, 2);
+        mostrarInformacionCliente(cliente3, 3);
     }
 
     public static List<String> leerArchivo(String nombreArchivo) {
