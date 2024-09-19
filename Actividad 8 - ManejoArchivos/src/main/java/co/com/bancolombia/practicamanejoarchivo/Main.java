@@ -27,7 +27,7 @@ public class Main {
         Cliente cliente2 = new Cliente(2, "2", cliente2Domicilio, "RFC2", "555-5678", "02-02-1991");
         Cliente cliente3 = new Cliente(3, "3", cliente3Domicilio, "RFC3", "555-8765", "03-03-1992");
 
-        var nombreArchivo = "cuentas.txt";
+        String nombreArchivo = "src/main/java/co/com/bancolombia/practicamanejoarchivo/cuentas.txt";
         List<String> lineas = leerArchivo(nombreArchivo);
 
         for (String linea : lineas) {
@@ -49,7 +49,7 @@ public class Main {
 
         mostrarInformacionCliente(cliente1, 1);
         mostrarInformacionCliente(cliente2, 2);
-        mostrarInformacionCliente(cliente3, 3);
+        mostrarInformacionCliente(cliente3, 2);
     }
 
     public static List<String> leerArchivo(String nombreArchivo) {
