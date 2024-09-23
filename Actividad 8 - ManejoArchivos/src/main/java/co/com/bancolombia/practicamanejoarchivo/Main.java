@@ -27,6 +27,7 @@ public class Main {
         Cliente cliente2 = new Cliente(2, "2", cliente2Domicilio, "RFC2", "555-5678", "02-02-1991");
         Cliente cliente3 = new Cliente(3, "3", cliente3Domicilio, "RFC3", "555-8765", "03-03-1992");
 
+        //Paso 2: Identificar el archivo, Leer el archivo, Insertar los datos
         String nombreArchivo = "src/main/java/co/com/bancolombia/practicamanejoarchivo/cuentas.txt";
         List<String> lineas = leerArchivo(nombreArchivo);
 
@@ -36,12 +37,14 @@ public class Main {
             int numeroCuenta = Integer.parseInt(partes[0]);
             double saldo = Double.parseDouble(partes[2]);
             double costoManejo = Double.parseDouble(partes[3]);
+            double tasaInteresMensual = Double.parseDouble(partes[3]);
 
             CuentaDeCheque cuentaCheque = new CuentaDeCheque( numeroCuenta, saldo, costoManejo);
+            CuentaDeAhorro cuentaAhorro = new CuentaDeAhorro( numeroCuenta, saldo, tasaInteresMensual);
 
             switch (clienteID) {
                 case 1 -> cliente1.agregarCuenta(cuentaCheque);
-                case 2 -> cliente2.agregarCuenta(cuentaCheque);
+                case 2 -> cliente2.agregarCuenta(cuentaAhorro);
                 case 3 -> cliente3.agregarCuenta(cuentaCheque);
                 default -> System.out.println("Cliente no válido: " + clienteID);
             }
