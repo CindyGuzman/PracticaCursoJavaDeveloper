@@ -13,6 +13,10 @@ cabo los ejercicios donde se va implementando y practicando los conocimientos ob
 
 ![Ejercicio 9](image-1.png)
 
+## Evidencia Ejecución Ejercicio 10
+
+![Ejercicio 10](image-2.png)
+
 ## Versionamiento 📌
 
 Se utilizó Git para el control de versiones 🔀
