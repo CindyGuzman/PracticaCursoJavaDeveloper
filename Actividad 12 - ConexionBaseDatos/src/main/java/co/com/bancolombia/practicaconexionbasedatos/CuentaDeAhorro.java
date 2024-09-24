@@ -2,22 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.com.bancolombia.practicapoo;
+package co.com.bancolombia.practicaconexionbasedatos;
 
 /**
  *
  * @author cieguzma
  */
-class CuentaDeAhorro extends Cuenta {
+public class CuentaDeAhorro extends Cuenta {
     
     private double tasaInteresMensual;
     
-    public CuentaDeAhorro (int numero, double saldo, double tasaInteresMensual) {
-        super(numero, saldo);
+    public CuentaDeAhorro (int numero, double saldo, String fechaApertura,  double tasaInteresMensual) {
+        super(numero, saldo, fechaApertura);
         this.tasaInteresMensual = tasaInteresMensual;
     }
     
-        public Double getTasaInteresMensual() {
+    public Double getTasaInteresMensual() {
         return tasaInteresMensual;
     }
     
