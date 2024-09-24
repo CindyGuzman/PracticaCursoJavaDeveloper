@@ -12,7 +12,7 @@ package co.com.bancolombia.practicaparallelstreams;
 public class Main {
 
     public static void main(String[] args) {
-                
+                        
         Domicilio cliente1Domicilio = new Domicilio("Calle 12 AA Sur", 55, "Sur", "Medellin", 546789);
         Cliente cliente1 = new Cliente(1, "Juan Soto", cliente1Domicilio, "RFC1", "555-1234", "01-01-1990");
 
@@ -35,6 +35,16 @@ public class Main {
         
         System.out.println("\n--- Cancelar la cuenta1 ---");
         cliente1.cancelarCuenta(45678);
+        cliente1.getCuentas().forEach(Cuenta::mostrarDetalles);
+        
+        Domicilio bancoDomicilio = new Domicilio("Carrera 45", 54, "Centro", "Medellin", 546709);
+        Banco banco = new Banco("Bancolombia", bancoDomicilio, "RFC321", "5999999");
+       
+        banco.adicionarCliente(cliente1);
+        banco.mostrarInformacionBanco();
+        
+        System.out.println("\n--- Consultar cliente1 ---");
+        banco.consultarCliente(1);
         cliente1.getCuentas().forEach(Cuenta::mostrarDetalles);
     }
     

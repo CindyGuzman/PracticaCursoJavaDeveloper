@@ -70,16 +70,14 @@ public class Banco implements ServicioClientes {
     public void mostrarInformacionBanco() {
     System.out.println("---------- Informacion de Banco ----------");
     System.out.println("Nombre Banco: " + nombre);
-    System.out.println("Domicilio Banco: " + domicilio);
     System.out.println("Rfc Banco: " + rfc);
     System.out.println("Telefono Banco: " + telefono);
-    System.out.println("Cliente del banco: " + clientes);
     System.out.println("------------------------------------------");
     }
 
     @Override
     public boolean agregarCliente(Cliente cliente) {
-        boolean existe = clientes.stream()
+        boolean existe = clientes.parallelStream()
                 .anyMatch(c -> c.getNumero() == cliente.getNumero());
         if (existe) {
             System.out.println("El cliente ya existe: " + cliente.getNumero());
@@ -92,7 +90,7 @@ public class Banco implements ServicioClientes {
     
     @Override
     public boolean eliminarCliente(int numeroCliente) {
-        Optional<Cliente> clienteOpt = clientes.stream()
+        Optional<Cliente> clienteOpt = clientes.parallelStream()
                 .filter(c -> c.getNumero() == numeroCliente)
                 .findFirst();
         
@@ -108,7 +106,7 @@ public class Banco implements ServicioClientes {
     
     @Override
     public Cliente consultarCliente(int numeroCliente) {
-        return clientes.stream()
+        return clientes.parallelStream()
                 .filter(c -> c.getNumero() == numeroCliente)
                 .findFirst()
                 .orElseGet(() -> {
